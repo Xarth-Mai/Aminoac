@@ -38,12 +38,27 @@
             text-align: center;
             margin-bottom: 20px;
         }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1><img src="img/aminoac.png" alt="阿米诺斯语翻译器" width="48px"> 阿米诺斯语翻译器</h1>
+        <h1><img src="aminoac.png" alt="阿米诺斯语翻译器" width="48px"> 阿米诺斯语翻译器</h1>
         <div>
             <h2>语言文字运用</h2>
             <p>输入中文，翻译为阿米诺斯语</p>
@@ -56,6 +71,10 @@
     <script>
         document.getElementById('inputText').addEventListener('input', translate);
     </script>
+
+    <div class="footer">
+        <p>了解更多，请访问项目仓库：<a href="https://github.com/Xarth-Mai/aminoac" target="_blank">https://github.com/Xarth-Mai/aminoac</a></p>
+    </div>
 </body>
 
 </html>
