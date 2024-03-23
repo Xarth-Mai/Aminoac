@@ -53,33 +53,54 @@ async function translate(text) {
 
 //来听阿米诺斯
 async function playTextToSpeech() {
+    const audioButton = document.getElementById("audioButton");
+    const translatedText = document.getElementById("translationOutput").innerText || "阿米诺斯";
+    const apiUrl = 'https://tts.lzzz.ink/' + encodeURIComponent(translatedText);
+
+    audioButton.disabled = true;
+    audioButton.innerText = "加载中...";
+
+    // 创建AbortController实例
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    // 设置超时时间为5秒
+    const timeoutId = setTimeout(() => {
+        controller.abort();
+    }, 5000);
+
     try {
-        // 获取阿米诺斯文本
-        var translatedText = document.getElementById("translationOutput").innerText;
-
-        // 构建Cloudflare Worker的请求URL
-        var apiUrl = 'https://tts.lzzz.ink/' + encodeURIComponent(translatedText);
-
-        // 发送请求获取MP3文件
-        let response = await fetch(apiUrl);
-
-        if (!response.ok) {
-            // 如果网络响应不成功，尝试再次请求
-            response = await fetch(apiUrl);
-        }
+        const response = await fetch(apiUrl, { signal });
+        audioButton.innerText = "加载中..";
 
         const blob = await response.blob();
-        
-        // 创建URL对象
-        var url = URL.createObjectURL(blob);
-        // 创建音频对象
-        var audio = new Audio(url);
-        // 播放音频
+        const url = URL.createObjectURL(blob);
+        const audio = new Audio(url);
+        audioButton.innerText = "加载中.";
         audio.play();
+
+        // 播放完成后重新设置按钮文本和状态
+        audio.onended = function () {
+            audioButton.innerText = "听听阿米诺斯语";
+            audioButton.disabled = false;
+        };
     } catch (error) {
-        console.error('Error fetching text-to-speech:', error);
+        if (error.name === 'AbortError') {
+            audioButton.innerText = "加载失败: 请求超时";
+        } else {
+            audioButton.innerText = "加载失败: " + (error.response ? "服务器错误: " + error.response.status : "网络错误");
+        }
+
+        setTimeout(() => {
+            audioButton.innerText = "听听阿米诺斯语";
+            audioButton.disabled = false;
+        }, 2000);
+    } finally {
+        clearTimeout(timeoutId);
     }
 }
+
+
 
 
 //阿米诺斯参数库
