@@ -55,12 +55,11 @@
             max-height: 30vh;
             min-height: 20vh;
             overflow-y: auto;
+            resize: none;
         }
 
         .input-text {
             height: 20vh;
-            resize: none;
-            overflow-y: auto;
         }
 
         .footer {
@@ -85,7 +84,7 @@
         <div>
             <h2>语言文字运用</h2>
             <p>输入中文，翻译为阿米诺斯语</p>
-            <textarea class="input-text" id="inputText" rows="4" spellcheck="false" placeholder="请输入中文"></textarea>
+            <textarea class="input-text" id="inputText" spellcheck="false" placeholder="请输入中文"></textarea>
             <div class="translation-output" id="translationOutput"></div>
         </div>
     </div>
