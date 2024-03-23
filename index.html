@@ -29,14 +29,21 @@
             height: 48px;
         }
 
+        textarea,
+        .translation-output {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
         textarea {
             width: 100%;
             margin-top: 10px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
-            min-height: 100px;
         }
 
         .footer {
@@ -63,7 +70,7 @@
             <h2>语言文字运用</h2>
             <p>输入中文，翻译为阿米诺斯语</p>
             <textarea id="inputText" rows="4" spellcheck="false"></textarea>
-            <div id="translationOutput"></div>
+            <div class="translation-output" id="translationOutput"></div>
         </div>
     </div>
 
