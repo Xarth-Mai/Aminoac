@@ -75,6 +75,21 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -83,9 +98,10 @@
         <h1><img src="aminoac.png" alt="阿米诺斯语翻译器" width="48px"> 阿米诺斯语翻译器</h1>
         <div>
             <h2>语言文字运用</h2>
-            <p>输入中文，翻译为阿米诺斯语</p>
+            <p>输入中文 翻译为阿米诺斯语 进行听力练习</p>
             <textarea class="input-text" id="inputText" spellcheck="false" placeholder="请输入中文"></textarea>
             <div class="translation-output" id="translationOutput"></div>
+            <button class="button" onclick="playTextToSpeech()">听听阿米诺斯语</button>
         </div>
     </div>
 
@@ -93,7 +109,7 @@
 
     <div class="footer">
         <p>了解更多，请访问项目仓库：<a href="https://github.com/Xarth-Mai/aminoac"
-                target="_blank">https://github.com/Xarth-Mai/aminoac</a></p>
+                target="_blank">Xarth-Mai/aminoac</a></p>
     </div>
 </body>
 
