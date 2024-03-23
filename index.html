@@ -11,6 +11,19 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1e1e1e;
+                color: #ffffff;
+            }
+
+            .footer a {
+                color: pink;
+            }
         }
 
         .container {
@@ -38,6 +51,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             resize: vertical;
+            background-color: inherit;
+            color: inherit;
         }
 
         .input-text {
@@ -52,7 +67,6 @@
         }
 
         .footer a {
-            color: red;
             text-decoration: none;
         }
 
