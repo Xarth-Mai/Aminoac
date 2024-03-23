@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿米诺斯语翻译器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .translation-output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="img/aminoac.png" alt="阿米诺斯语翻译器" width="48px"> 阿米诺斯语翻译器</h1>
+        <div>
+            <h2>语言文字运用</h2>
+            <p>输入中文，翻译为阿米诺斯语</p>
+            <textarea id="inputText" rows="4" spellcheck="false"></textarea>
+            <div class="translation-output" id="translationOutput"></div>
+        </div>
+    </div>
+
+    <script src="translation.js"></script>
+    <script>
+        document.getElementById('inputText').addEventListener('input', translate);
+    </script>
+</body>
+
+</html>
