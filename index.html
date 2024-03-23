@@ -36,10 +36,18 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            resize: vertical;
         }
 
-        textarea {
-            resize: none;
+        textarea::placeholder,
+        .translation-output::before {
+            content: "Aminoac";
+            color: #999;
+        }
+
+        .input-text {
+            height: auto;
+            max-height: 35vh;
         }
 
         .footer {
@@ -65,7 +73,7 @@
         <div>
             <h2>语言文字运用</h2>
             <p>输入中文，翻译为阿米诺斯语</p>
-            <textarea id="inputText" rows="4" spellcheck="false"></textarea>
+            <textarea class="input-text" id="inputText" rows="4" spellcheck="false" placeholder="输入框"></textarea>
             <div class="translation-output" id="translationOutput"></div>
         </div>
     </div>
