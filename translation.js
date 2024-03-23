@@ -1,4 +1,5 @@
 // 定义常量
+let isComposing = false;
 const inputText = document.getElementById('inputText');
 const translationOutput = document.getElementById('translationOutput');
 const REGEX_RULES = [
