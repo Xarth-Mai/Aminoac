@@ -27,14 +27,14 @@
         }
 
         .container {
-            max-width: 90%;
+            max-width: 100%;
             margin: 0 auto;
             padding: 20px;
+            padding-right: 40px;
         }
 
         h1 {
             display: flex;
-            align-items: center;
             margin: 0;
         }
 
@@ -50,14 +50,16 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            resize: vertical;
             background-color: inherit;
             color: inherit;
+            max-height: 25vh;
+            overflow-y: auto;
         }
 
         .input-text {
-            height: auto;
-            max-height: 35vh;
+            height: 20vh;
+            resize: none;
+            overflow-y: auto;
         }
 
         .footer {
