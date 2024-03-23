@@ -60,26 +60,33 @@ async function playTextToSpeech() {
     audioButton.disabled = true;
     audioButton.innerText = "加载中...";
 
-    // 创建AbortController实例
     const controller = new AbortController();
     const signal = controller.signal;
 
-    // 设置超时时间为5秒
+    const updateButtonText = () => {
+        const buttonText = audioButton.innerText;
+        if (buttonText === "加载中...")
+            audioButton.innerText = "加载中..";
+        else if (buttonText === "加载中..")
+            audioButton.innerText = "加载中.";
+        else if (buttonText === "加载中.")
+            audioButton.innerText = "加载中...";
+    };
+
+    const intervalId = setInterval(updateButtonText, 500);
+
     const timeoutId = setTimeout(() => {
         controller.abort();
     }, 5000);
 
     try {
         const response = await fetch(apiUrl, { signal });
-        audioButton.innerText = "加载中..";
-
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
         const audio = new Audio(url);
-        audioButton.innerText = "加载中.";
         audio.play();
+        audioButton.innerText = "阿米诺斯!~";
 
-        // 播放完成后重新设置按钮文本和状态
         audio.onended = function () {
             audioButton.innerText = "听听阿米诺斯语";
             audioButton.disabled = false;
@@ -96,6 +103,7 @@ async function playTextToSpeech() {
             audioButton.disabled = false;
         }, 2000);
     } finally {
+        clearInterval(intervalId);
         clearTimeout(timeoutId);
     }
 }
