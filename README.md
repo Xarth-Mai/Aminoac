@@ -1,4 +1,4 @@
-# 🫧 [aminoac](https://aminoac.lzzz.ink)
+# 🫧 [Aminoac](https://aminoac.lzzz.ink)
 阿米诺斯语翻译器
 
 ## 📝 简介
