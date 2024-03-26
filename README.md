@@ -12,7 +12,7 @@
 - [ ] Safari浏览器支持
 
 ## 🪤 学分
-[HanaYabuki](https://github.com/HanaYabuki/aminoac)
+[HanaYabuki/aminoac](https://github.com/HanaYabuki/aminoac)
 
 ## 🛠 开源
 本项目采用 MIT 协议开源。
