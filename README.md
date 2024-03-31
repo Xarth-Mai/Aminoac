@@ -18,5 +18,5 @@
 ## 🛠 开源
 本项目采用 MIT 协议开源。
 
-## Stargazers over time
+## 🌟 观星者
 [![Stargazers over time](https://starchart.cc/Xarth-Mai/Aminoac.svg?variant=adaptive)](https://starchart.cc/Xarth-Mai/Aminoac)
