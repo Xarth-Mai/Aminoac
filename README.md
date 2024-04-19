@@ -10,7 +10,7 @@
 - [x] AI朗读中式/英式阿米诺斯语
 - [x] 原生暗黑模式自适应
 - [x] Chromium浏览器支持
-- [ ] Safari浏览器支持
+- [x] Safari浏览器支持(iOS17+ only)
 
 ## 🪤 学分
 [HanaYabuki/aminoac](https://github.com/HanaYabuki/aminoac)
